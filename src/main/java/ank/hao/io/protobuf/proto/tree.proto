@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package tutorial;
+
+option java_package="ank.hao.io.protobuf.code";
+option java_outer_classname="TreeProtos";
+
+message Tree{
+    string name=1;
+    int32 age=2;
+
+    enum TreeType{
+        LIUSHU=0;
+        YANGSHU=1;
+    }
+
+    TreeType treeType=3;
+
+    enum LeafType{
+        GREEN=0;
+        YELLOW=1;
+        RED=2;
+    }
+
+    message Leaf{
+        uint64 leafId=1;
+        LeafType leafType=2;
+    }
+
+    repeated Leaf leaf=4;
+}
